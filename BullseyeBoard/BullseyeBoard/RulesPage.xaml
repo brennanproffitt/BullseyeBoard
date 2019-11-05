@@ -4,12 +4,43 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundColor="Black"
              x:Class="BullseyeBoard.RulesPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label 
+                Text="Rules"
+                TextColor="Red"
+                FontSize="50"
+                FontAttributes="Bold"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="Center" />
+
+            <ScrollView>
+
+                <Label
+                Text="Start by flipping a coin or shooting a dart for closest to bulls eye in order to determine who goes first. Each team will throw 3 darts per turn but the trick to this game is you must hit a double in order to officially start collecting points and also must hit a double to win the game. Hitting  a double consists of the very outside ring on the board or a double bulls eye on the very center. Once you hit your first double, those points count and you total your points to count down from 301 (or 501).
+Most players aim for triple 20s as it offers 60 total points and if you miss you are likely to still hit a single 20. You must also hit a double for your last throw in order to win. Once you score at least 101 points, you will be down under 100 and you should look at an out chart to help you strategize for your final throws. If you go under zero by scoring too many points or hit zero without scoring a double, you go bust. When you go bust you must forfeit the rest of your turn and restart the next turn with the same amount of points you started the last round with."
+                TextColor="White"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Margin="40"
+                />
+
+            </ScrollView>
+
+            <Button
+                Text="Back"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                CornerRadius="50"
+                TextColor="White"
+                BackgroundColor="ForestGreen"
+                HeightRequest="100"
+                WidthRequest="200"
+                FontSize="Header"
+                />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

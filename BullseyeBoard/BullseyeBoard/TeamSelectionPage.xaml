@@ -4,12 +4,63 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundColor="Black"
              x:Class="BullseyeBoard.TeamSelectionPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+  
+
+                <Label 
+                Text="Team Names"
+                TextColor="Red"
+                FontSize="50"
+                FontAttributes="Bold"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="Center"
+                />
+
+            <Label
+                Text="Team 1 Name"
+                TextColor="White"
+                FontSize="40"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                />
+
+            <Entry
+                BackgroundColor="ForestGreen"
+                Margin="150"
+                HeightRequest="100"
+                />
+
+            <Label
+                Text="Team 2 Name"
+                TextColor="White"
+                FontSize="40"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                />
+
+            <Entry
+                BackgroundColor="ForestGreen"
+                Margin="150"
+                HeightRequest="100"
+                />
+
+            <Button
+                Text="Submit"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                CornerRadius="50"
+                TextColor="White"
+                BackgroundColor="ForestGreen"
+                HeightRequest="100"
+                WidthRequest="200"
+                FontSize="Header"
+               />
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
