@@ -10,15 +10,17 @@
     <StackLayout>
         <Label Text="Bullseye Board" 
            HorizontalOptions="Center"
-           VerticalOptions="Start"
+           VerticalOptions="StartAndExpand"
                FontAttributes="Bold"
                FontSize="35"
                TextColor="Red"/>
 
-        <Image />
+        <Image Source="bcolordart.png"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
 
         <Button Text="Start"
-                VerticalOptions="CenterAndExpand"
+                VerticalOptions="EndAndExpand"
                 HorizontalOptions="Center"
                 BackgroundColor="ForestGreen"
                 TextColor="White"
@@ -26,6 +28,7 @@
                 HeightRequest="100"
                 WidthRequest="200"
                 CornerRadius="50"
+                Margin="10"
                 />
     </StackLayout>
 

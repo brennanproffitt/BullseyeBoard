@@ -130,4 +130,7 @@
       <Name>BullseyeBoard</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bcolordart.png" />
+  </ItemGroup>
 </Project>
