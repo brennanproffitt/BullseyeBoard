@@ -4,13 +4,29 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundColor="Black"
              x:Class="BullseyeBoard.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="Bullseye Board" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="Start"
+               FontAttributes="Bold"
+               FontSize="35"
+               TextColor="Red"/>
+
+        <Image />
+
+        <Button Text="Start"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                BackgroundColor="ForestGreen"
+                TextColor="White"
+                FontSize="Header"
+                HeightRequest="100"
+                WidthRequest="200"
+                CornerRadius="50"
+                />
     </StackLayout>
 
 </ContentPage>
