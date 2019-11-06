@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace BullseyeBoard
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RulesPage : ContentPage
+    public partial class Page1 : ContentPage
     {
-        public RulesPage()
+        public Page1()
         {
             InitializeComponent();
-        }
-
-        private void BackButton_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new GameTypePage());
         }
     }
 }

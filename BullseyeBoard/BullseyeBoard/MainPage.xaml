@@ -8,16 +8,18 @@
              x:Class="BullseyeBoard.MainPage">
 
     <StackLayout>
-        <Label Text="Bullseye Board" 
+        <Label Text="BullseyeBoard" 
            HorizontalOptions="Center"
            VerticalOptions="StartAndExpand"
                FontAttributes="Bold"
-               FontSize="35"
+               FontSize="55"
                TextColor="Red"/>
 
         <Image Source="bcolordart.png"
                VerticalOptions="Center"
-               HorizontalOptions="Center"/>
+               HorizontalOptions="Center"
+               HeightRequest="300"
+               WidthRequest="300"/>
 
         <Button Text="Start"
                 VerticalOptions="EndAndExpand"
@@ -29,7 +31,7 @@
                 WidthRequest="200"
                 CornerRadius="50"
                 Margin="10"
-                />
+                Clicked="StartButton_Clicked"/>
     </StackLayout>
 
 </ContentPage>

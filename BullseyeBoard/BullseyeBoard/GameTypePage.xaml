@@ -4,12 +4,53 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BullseyeBoard.GameTypePage">
+             x:Class="BullseyeBoard.GameTypePage"
+             BackgroundColor="Black">
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="BullseyeBoard" 
+           HorizontalOptions="Center"
+           VerticalOptions="StartAndExpand"
+               FontAttributes="Bold"
+               FontSize="55"
+               TextColor="Red"/>
+
+            <Button Text="301"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                BackgroundColor="ForestGreen"
+                TextColor="White"
+                FontSize="Header"
+                HeightRequest="75"
+                WidthRequest="150"
+                CornerRadius="50"
+                Margin="10"/>
+
+            <Button Text="501"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                BackgroundColor="ForestGreen"
+                TextColor="White"
+                FontSize="Header"
+                HeightRequest="75"
+                WidthRequest="150"
+                CornerRadius="50"
+                Margin="10"/>
+
+            <Button Text="Rules"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                BackgroundColor="ForestGreen"
+                TextColor="White"
+                FontSize="Header"
+                HeightRequest="75"
+                WidthRequest="150"
+                CornerRadius="50"
+                Margin="10"
+                Clicked="RulesButton_Clicked"/>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

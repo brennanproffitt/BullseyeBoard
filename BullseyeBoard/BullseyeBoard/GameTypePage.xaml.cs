@@ -16,5 +16,10 @@ namespace BullseyeBoard
         {
             InitializeComponent();
         }
+
+        private void RulesButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RulesPage());
+        }
     }
 }

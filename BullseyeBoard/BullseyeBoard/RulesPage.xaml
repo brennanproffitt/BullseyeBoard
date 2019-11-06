@@ -39,7 +39,8 @@ Most players aim for triple 20s as it offers 60 total points and if you miss you
                 HeightRequest="100"
                 WidthRequest="200"
                 FontSize="Header"
-                />
+                Clicked="BackButton_Clicked"
+                Margin="10"/>
 
         </StackLayout>
     </ContentPage.Content>
