@@ -4,12 +4,35 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundColor="Black"
              x:Class="BullseyeBoard.FinalScorePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label  
+                Text="Final Score" 
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                FontAttributes="Bold"
+                FontSize="60"
+                TextColor="Red"
+                />
+
+            <Label
+                Text="Team 1:"
+                FontSize="48"
+                TextColor="Red"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                />
+
+            <Label
+                Text="Team 2:"
+                FontSize="48"
+                TextColor="Red"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

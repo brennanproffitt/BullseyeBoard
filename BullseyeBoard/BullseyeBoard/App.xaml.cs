@@ -10,7 +10,7 @@ namespace BullseyeBoard
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new FinalScorePage());
         }
 
         protected override void OnStart()

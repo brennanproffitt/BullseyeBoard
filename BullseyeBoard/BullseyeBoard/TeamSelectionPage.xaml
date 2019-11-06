@@ -24,13 +24,15 @@
                 Text="Team 1 Name"
                 TextColor="White"
                 FontSize="40"
-                VerticalOptions="Center"
                 HorizontalOptions="Center"
                 />
 
             <Entry
                 BackgroundColor="ForestGreen"
-                Margin="150"
+                HorizontalTextAlignment="Center"
+                TextColor="White"
+                FontSize="60"
+                Margin="30"
                 HeightRequest="100"
                 />
 
@@ -38,19 +40,21 @@
                 Text="Team 2 Name"
                 TextColor="White"
                 FontSize="40"
-                VerticalOptions="Center"
                 HorizontalOptions="Center"
                 />
 
             <Entry
                 BackgroundColor="ForestGreen"
-                Margin="150"
+                HorizontalTextAlignment="Center"
+                FontSize="60"
+                TextColor="White"
+                Margin="30"
                 HeightRequest="100"
                 />
 
             <Button
                 Text="Submit"
-                VerticalOptions="CenterAndExpand"
+                Margin="20"
                 HorizontalOptions="Center"
                 CornerRadius="50"
                 TextColor="White"
