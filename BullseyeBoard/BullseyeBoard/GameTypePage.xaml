@@ -25,7 +25,8 @@
                 HeightRequest="75"
                 WidthRequest="150"
                 CornerRadius="50"
-                Margin="10"/>
+                Margin="10"
+                Clicked="ThreeButton_Clicked"/>
 
             <Button Text="501"
                 VerticalOptions="CenterAndExpand"
@@ -36,7 +37,8 @@
                 HeightRequest="75"
                 WidthRequest="150"
                 CornerRadius="50"
-                Margin="10"/>
+                Margin="10"
+                Clicked="FiveButton_Clicked"/>
 
             <Button Text="Rules"
                 VerticalOptions="CenterAndExpand"

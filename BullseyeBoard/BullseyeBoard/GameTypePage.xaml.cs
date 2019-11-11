@@ -21,5 +21,15 @@ namespace BullseyeBoard
         {
             Navigation.PushAsync(new RulesPage());
         }
+
+        private void FiveButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TeamSelectionPage());
+        }
+
+        private void ThreeButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TeamSelectionPage());
+        }
     }
 }

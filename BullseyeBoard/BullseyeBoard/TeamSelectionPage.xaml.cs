@@ -16,5 +16,10 @@ namespace BullseyeBoard
         {
             InitializeComponent();
         }
+
+        private void SubmitButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new GamePage());
+        }
     }
 }

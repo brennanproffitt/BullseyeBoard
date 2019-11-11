@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace BullseyeBoard
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page1 : ContentPage
+    public partial class GamePage : ContentPage
     {
-        public Page1()
+        public GamePage()
         {
             InitializeComponent();
         }
