@@ -9,7 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullseyeBoard.Android", "Bu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullseyeBoard.iOS", "BullseyeBoard\BullseyeBoard.iOS\BullseyeBoard.iOS.csproj", "{19E4081C-BE33-4581-B5C0-811CAC8BCEE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullseyeBoard", "BullseyeBoard\BullseyeBoard\BullseyeBoard.csproj", "{E63ACFB5-6567-4376-9AC1-1ADB5BF3DA85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BullseyeBoard", "BullseyeBoard\BullseyeBoard\BullseyeBoard.csproj", "{E63ACFB5-6567-4376-9AC1-1ADB5BF3DA85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{16D865E3-4055-4BE9-B660-45DEB151EB57}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.md = ReadMe.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
