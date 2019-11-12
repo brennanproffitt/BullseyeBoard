@@ -19,13 +19,13 @@ namespace BullseyeBoard
 
         private void SubmitButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new GamePage());
-
             string teamOneName = teamOneEntry.Text;
             string teamTwoName = teamTwoEntry.Text;
 
             Preferences.Set("TeamOneName", teamOneName);
             Preferences.Set("TeamTwoName", teamTwoName);
+
+            Navigation.PushAsync(new GamePage());
         }
     }
 }
