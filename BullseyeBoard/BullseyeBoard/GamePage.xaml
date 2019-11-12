@@ -4,12 +4,51 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BullseyeBoard.GamePage">
+             x:Class="BullseyeBoard.GamePage"
+             BackgroundColor="Black">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout  Margin="20" Spacing="5">
+            <Label Text="Team 1 Name"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" 
+                TextColor="Red"
+                FontSize="30">
+            </Label>
+            <Label Text="Team 1 Score"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" 
+                TextColor="Red"
+                FontSize="30">
+            </Label>
+            <Image Source="bcolordart.png"
+                HeightRequest="415"
+                WidthRequest="415"
+                VerticalOptions="Center"
+                HorizontalOptions="Center">
+            </Image>
+            <Picker
+                Title="Color"
+                TitleColor="White"
+                TextColor="White"
+                FontSize="20">
+            </Picker>
+            <Picker
+                Title="Number"
+                TitleColor="White"
+                TextColor="White"
+                FontSize="20">
+            </Picker>
+            <Button Text="Submit"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="Center"
+                BackgroundColor="ForestGreen"
+                TextColor="White"
+                FontSize="40"
+                HeightRequest="75"
+                WidthRequest="175"
+                CornerRadius="40"
+                Margin="0,10,0,10">
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
