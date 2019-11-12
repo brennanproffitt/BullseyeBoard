@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,11 +25,17 @@ namespace BullseyeBoard
         private void FiveButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new TeamSelectionPage());
+
+            int startingGameScore = 501;
+            Preferences.Set("startingGameScore", startingGameScore);
         }
 
         private void ThreeButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new TeamSelectionPage());
+
+            int startingGameScore = 301;
+            Preferences.Set("startingGameScore", startingGameScore);
         }
     }
 }
