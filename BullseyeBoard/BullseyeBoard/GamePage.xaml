@@ -13,7 +13,7 @@
                 HorizontalOptions="Center" 
                 TextColor="Red"
                 FontSize="30"
-                x:Name="teamOneLabel">
+                x:Name="currentTeamLabel">
             </Label>
             <Label Text="Team 1 Score"
                 VerticalOptions="Start" 

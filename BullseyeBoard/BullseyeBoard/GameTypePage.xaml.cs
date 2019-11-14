@@ -26,16 +26,16 @@ namespace BullseyeBoard
         {
             Navigation.PushAsync(new TeamSelectionPage());
 
-            int startingGameScore = 501;
-            Preferences.Set("startingGameScore", startingGameScore);
+            int fiveStartingGameScore = 501;
+            Preferences.Set("startingGameScore", fiveStartingGameScore);
         }
 
         private void ThreeButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new TeamSelectionPage());
 
-            int startingGameScore = 301;
-            Preferences.Set("startingGameScore", startingGameScore);
+            int threeStartingGameScore = 301;
+            Preferences.Set("startingGameScore", threeStartingGameScore);
         }
     }
 }

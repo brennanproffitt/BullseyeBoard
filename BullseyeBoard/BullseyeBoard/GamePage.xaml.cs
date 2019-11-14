@@ -12,11 +12,18 @@ namespace BullseyeBoard
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GamePage : ContentPage
     {
+        private int teamAScore;
+        private int teamBScore;
+
         public GamePage()
         {
             InitializeComponent();
 
-            teamOneLabel.Text = Preferences.Get("TeamOneName","Team 1");
+            teamAScore = Preferences.Get("startingGameScore", 0);
+            teamBScore = Preferences.Get("startingGameScore", 0);
+
+            currentTeamLabel.Text = Preferences.Get("TeamOneName","Team 1");
+
         }
     }
 }
