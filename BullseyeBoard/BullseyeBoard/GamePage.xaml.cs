@@ -36,8 +36,33 @@ namespace BullseyeBoard
 
         }
 
+        public int computeScore(string color, int boardNumber)
+        {
+            if(color == "red")
+            {
+                return 2 * boardNumber;
+            }
+            else if (color == "green")
+            {
+                return 3 * boardNumber;
+            }
+            else if (color == "purple")
+            {
+                return 25;
+            }
+            else if (color == "yellow")
+            {
+                return 50;
+            }
+            else
+            {
+                return boardNumber;
+            }
+        }
+
         private void SubmitButton_Clicked(object sender, EventArgs e)
         {
+            
             if (currentTeam == "Team 1")
             {
                 teamAScore -= throwValue;
