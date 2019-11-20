@@ -24,6 +24,7 @@ namespace BullseyeBoard
         private int currentRound = 1;
         private int counter = 1;
 
+
         public GamePage()
         {
             InitializeComponent();
@@ -38,19 +39,19 @@ namespace BullseyeBoard
 
         public int computeScore(string color, int boardNumber)
         {
-            if(color == "red")
+            if(color == "Red")
             {
                 return 2 * boardNumber;
             }
-            else if (color == "green")
+            else if (color == "Green")
             {
                 return 3 * boardNumber;
             }
-            else if (color == "purple")
+            else if (color == "Purple")
             {
                 return 25;
             }
-            else if (color == "yellow")
+            else if (color == "Yellow")
             {
                 return 50;
             }
@@ -62,20 +63,26 @@ namespace BullseyeBoard
 
         private void SubmitButton_Clicked(object sender, EventArgs e)
         {
-            
+            throwValue = computeScore(Convert.ToString(colorPicker.SelectedItem), Convert.ToInt32(numberPicker.SelectedItem));
             if (currentTeam == "Team 1")
             {
-                teamAScore -= throwValue;
-                Preferences.Set("teamAScore", teamAScore);
-                currentTeamScore.Text = teamAScore.ToString();
-                counter++;
-                if(counter > 3)
+                if (teamAScore == Preferences.Get("startingGameScore", 0) || (Convert.ToString(colorPicker.SelectedItem)) != "Red")
                 {
-                    currentTeam = "Team 2";
-                    currentTeamLabel.Text = Preferences.Get(team2NameSetting,"Team 2");
-                    currentTeamScore.Text = teamBScore.ToString();
-                    counter = 1;
+                    DisplayAlert("Invalid", "A double is required to begin scoring", "Ok");
                 }
+
+                    teamAScore -= throwValue;
+                    Preferences.Set("teamAScore", teamAScore);
+                    currentTeamScore.Text = teamAScore.ToString();
+                    counter++;
+                    if (counter > 3)
+                    {
+                        DisplayAlert("Team Switch", "Your score is " + currentTeamScore.Text, "Continue");
+                        currentTeam = "Team 2";
+                        currentTeamLabel.Text = Preferences.Get(team2NameSetting, "Team 2");
+                        currentTeamScore.Text = teamBScore.ToString();
+                        counter = 1;
+                    }
             }
             else 
             {
@@ -85,6 +92,7 @@ namespace BullseyeBoard
                 counter++;
                 if (counter > 3)
                 {
+                    DisplayAlert("Team Switch", "Your score is " + currentTeamScore.Text, "Continue");
                     currentTeam = "Team 1";
                     currentTeamLabel.Text = Preferences.Get(team1NameSetting, "Team 1");
                     currentTeamScore.Text = teamAScore.ToString();
