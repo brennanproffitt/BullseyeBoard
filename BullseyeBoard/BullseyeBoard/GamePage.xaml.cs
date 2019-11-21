@@ -66,15 +66,17 @@ namespace BullseyeBoard
             throwValue = computeScore(Convert.ToString(colorPicker.SelectedItem), Convert.ToInt32(numberPicker.SelectedItem));
             if (currentTeam == "Team 1")
             {
-                if (teamAScore == Preferences.Get("startingGameScore", 0) || (Convert.ToString(colorPicker.SelectedItem)) != "Red")
+                if (teamAScore == Preferences.Get("startingGameScore", 0) && (Convert.ToString(colorPicker.SelectedItem)) != "Red")
                 {
                     DisplayAlert("Invalid", "A double is required to begin scoring", "Ok");
+                    throwValue = 0;
                 }
 
                     teamAScore -= throwValue;
                     Preferences.Set("teamAScore", teamAScore);
                     currentTeamScore.Text = teamAScore.ToString();
                     counter++;
+
                     if (counter > 3)
                     {
                         DisplayAlert("Team Switch", "Your score is " + currentTeamScore.Text, "Continue");
@@ -86,6 +88,13 @@ namespace BullseyeBoard
             }
             else 
             {
+
+                if (teamBScore == Preferences.Get("startingGameScore", 0) && (Convert.ToString(colorPicker.SelectedItem)) != "Red")
+                {
+                    DisplayAlert("Invalid", "A double is required to begin scoring", "Ok");
+                    throwValue = 0;
+                }
+
                 teamBScore -= throwValue;
                 Preferences.Set("teamBScore", teamBScore);
                 currentTeamScore.Text = teamBScore.ToString();
