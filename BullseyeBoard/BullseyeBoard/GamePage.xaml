@@ -47,6 +47,7 @@
                 TextColor="White"
                 FontSize="20">
                 <Picker.Items>
+                    <x:String>0</x:String> <!-- 0 was added because it is possible that the user doesn't hit anything on the board.-->
                     <x:String>1</x:String>
                     <x:String>2</x:String>
                     <x:String>3</x:String>
