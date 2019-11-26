@@ -28,7 +28,7 @@
                 TextColor="White"
                 FontSize="Header"
                 HeightRequest="100"
-                WidthRequest="200"
+                WidthRequest="250"
                 CornerRadius="50"
                 Margin="10"
                 Clicked="StartButton_Clicked"/>
