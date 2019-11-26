@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +15,15 @@ namespace BullseyeBoard
         public FinalScorePage()
         {
             InitializeComponent();
+            Team1Name.Text = Preferences.Get("TeamOneName", "Team1");
+            Team2Name.Text = Preferences.Get("TeamTwoName", "Team2");
+            Team1FinalScore.Text = Convert.ToString(Preferences.Get("TeamAScore", 0));
+            Team2FinalScore.Text = Convert.ToString(Preferences.Get("TeamBScore", 0));
+        }
+
+        private void NewGameButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new GameTypePage());
         }
     }
 }

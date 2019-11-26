@@ -7,42 +7,92 @@
              BackgroundColor="Black"
              x:Class="BullseyeBoard.FinalScorePage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Spacing="25">
             <Label  
                 Text="Final Score" 
                 HorizontalOptions="Center"
-                VerticalOptions="CenterAndExpand"
+                VerticalOptions="Center"
                 FontAttributes="Bold"
                 FontSize="60"
                 TextColor="Red"
                 />
 
-            <Label
-                Text="Team 1:"
+            <Frame 
+                   Padding="30"
+                   BackgroundColor="ForestGreen"
+                   Opacity=".75"
+                   Margin="10"
+                   WidthRequest="350"
+                   HeightRequest="200"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+
+                <StackLayout 
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+
+                <Label
+                        
+                x:Name="Team1Name"
                 FontSize="48"
-                TextColor="Red"
+                TextColor="White"
                 HorizontalOptions="Center"
-                VerticalOptions="CenterAndExpand"
+
                 />
 
-            <Label
-                Text="Team 2:"
+            <Label x:Name="Team1FinalScore"
                 FontSize="48"
-                TextColor="Red"
-                VerticalOptions="CenterAndExpand"
+                TextColor="White"
+                HorizontalOptions="Center"
+
+                />
+
+        </StackLayout>
+
+        </Frame>
+
+            <Frame Padding="30"
+                   VerticalOptions="Center"
+                   BackgroundColor="ForestGreen"
+                   Opacity=".75"
+                   Margin="10"
+                   WidthRequest="350"
+                   HeightRequest="200"
+                   HorizontalOptions="Center">
+
+                <StackLayout 
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+
+                    <Label
+                x:Name="Team2Name"
+                FontSize="48"
+                TextColor="White"
+                HorizontalOptions="Center"                />
+
+            <Label x:Name="Team2FinalScore"
+                FontSize="48"
+                TextColor="White"
                 HorizontalOptions="Center"
                 />
 
-            <Button
+        </StackLayout>
+
+        </Frame>
+            
+            <Button x:Name="NewGameButton"
                 Text="New Game"
                 Margin="20"
                 HorizontalOptions="Center"
                 CornerRadius="50"
                 TextColor="White"
                 BackgroundColor="ForestGreen"
-                HeightRequest="100"
                 WidthRequest="250"
-                FontSize="Header"/>
+                HeightRequest="100"    
+                FontSize="Header"
+                Clicked="NewGameButton_Clicked"/>
+            
+            
 
 
         </StackLayout>

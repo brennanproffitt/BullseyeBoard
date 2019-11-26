@@ -22,8 +22,8 @@
                 BackgroundColor="ForestGreen"
                 TextColor="White"
                 FontSize="Header"
-                HeightRequest="75"
-                WidthRequest="150"
+                HeightRequest="100"
+                WidthRequest="250"
                 CornerRadius="50"
                 Margin="10"
                 Clicked="ThreeButton_Clicked"/>
@@ -34,8 +34,8 @@
                 BackgroundColor="ForestGreen"
                 TextColor="White"
                 FontSize="Header"
-                HeightRequest="75"
-                WidthRequest="150"
+                HeightRequest="100"
+                WidthRequest="250"
                 CornerRadius="50"
                 Margin="10"
                 Clicked="FiveButton_Clicked"/>
@@ -46,8 +46,8 @@
                 BackgroundColor="ForestGreen"
                 TextColor="White"
                 FontSize="Header"
-                HeightRequest="75"
-                WidthRequest="150"
+                HeightRequest="100"
+                WidthRequest="250"
                 CornerRadius="50"
                 Margin="10"
                 Clicked="RulesButton_Clicked"/>
