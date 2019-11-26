@@ -34,7 +34,6 @@ namespace BullseyeBoard
 
             currentTeamLabel.Text = Preferences.Get(team1NameSetting,"Team 1");
 
-
         }
 
         public int computeScore(string color, int boardNumber) //this is the method used to determine which values are associated with a color on the dart board.
@@ -61,6 +60,50 @@ namespace BullseyeBoard
             }
         }
 
+
+
+        private void teamASwitch() //switches the turn to Team 2 and displays an alert showing Team 1's score.
+        {
+            DisplayAlert("Team Switch", currentTeamLabel.Text + ", your score is " + teamAScore.ToString(), "Continue");
+            currentTeam = "Team 2";
+            currentTeamLabel.Text = Preferences.Get(team2NameSetting, "Team 2");
+            currentTeamScore.Text = teamBScore.ToString();
+            Preferences.Set("teamARoundScore", teamAScore); //sets the round score for team 1 so we can call it incase they bust the next round
+            counter = 1;
+        }
+
+        private void teamBSwitch() //switches the turn to Team 1 and displays an alert showing Team 2's score.
+        {
+            DisplayAlert("Team Switch", currentTeamLabel.Text + ", your score is " + teamBScore.ToString(), "Continue");
+            currentTeam = "Team 1";
+            currentTeamLabel.Text = Preferences.Get(team1NameSetting, "Team 1");
+            currentTeamScore.Text = teamAScore.ToString();
+            Preferences.Set("teamBRoundScore", teamBScore); //sets the round score for team 2 so we can call it incase they bust the next round
+            counter = 1;
+        }
+
+        private void teamABustCheck()
+        {
+            if (teamAScore <= 1) //WORK IN PROGRESS: Logic that determines when a user busts.
+            {
+                DisplayAlert("Bust!", "You scored an invalid amount of points. You must reach the score of 0 on a double (the red ring). Your score is now set back to the value it was before this turn.", "Ok");
+                teamAScore = Preferences.Get("teamARoundScore", 0);
+                teamASwitch();
+                return;
+            }
+        }
+
+        private void teamBBustCheck()
+        {
+            if (teamBScore <= 1) //WORK IN PROGRESS: Logic that determines when a user busts.
+            {
+                DisplayAlert("Bust!", "You scored an invalid amount of points. You must reach the score of 0 on a double (the red ring). Your score is now set back to the value it was before this turn.", "Ok");
+                teamBScore = Preferences.Get("teamBRoundScore", 0);
+                teamBSwitch();
+                return;
+            }
+        }
+
         private void SubmitButton_Clicked(object sender, EventArgs e) //handles all the logic when the submit button is clicked
         {
             throwValue = computeScore(Convert.ToString(colorPicker.SelectedItem), Convert.ToInt32(numberPicker.SelectedItem)); //throwValue = whatever values were put into the pickers by the user.
@@ -72,25 +115,15 @@ namespace BullseyeBoard
                     throwValue = 0;
                 }
 
-                    if(counter <= 3 && (teamAScore <= 1)) //WORK IN PROGRESS: Logic that determines when a user busts.
-                    {
-                        DisplayAlert("Bust!","You scored an invalid amount of points. You must reach the score of 0 on a double (the red ring). Your score is now set back to the value it was before this turn.","Ok");
-                        teamAScore += throwValue;
-                        counter = 4;
-                    }
-
                     teamAScore -= throwValue; //Team A score is equal to itself minus whatever the throwValue is
                     Preferences.Set("teamAScore", teamAScore); //store teamA's updated score
                     currentTeamScore.Text = teamAScore.ToString(); //updating the scoreLabel that displays at the top of the screen.
+                    teamABustCheck();
                     counter++; //incrementing the counter to determine if it is still this team's turn
 
                     if (counter > 3) //switches teams and displays an alert showing the current team's score.
                     {
-                        DisplayAlert("Team Switch", currentTeamLabel.Text + ", your score is " + currentTeamScore.Text, "Continue");
-                        currentTeam = "Team 2";
-                        currentTeamLabel.Text = Preferences.Get(team2NameSetting, "Team 2");
-                        currentTeamScore.Text = teamBScore.ToString();
-                        counter = 1;
+                        teamASwitch();
                     }
             }
             else //everything in this else statement is practically the same as the above, just for the opposite team.
@@ -105,14 +138,12 @@ namespace BullseyeBoard
                 teamBScore -= throwValue;
                 Preferences.Set("teamBScore", teamBScore);
                 currentTeamScore.Text = teamBScore.ToString();
+                teamBBustCheck();
                 counter++;
+
                 if (counter > 3)
                 {
-                    DisplayAlert("Team Switch", currentTeamLabel.Text + ", your score is " + currentTeamScore.Text, "Continue");
-                    currentTeam = "Team 1";
-                    currentTeamLabel.Text = Preferences.Get(team1NameSetting, "Team 1");
-                    currentTeamScore.Text = teamAScore.ToString();
-                    counter = 1;
+                    teamBSwitch();
                 }
             }
 
