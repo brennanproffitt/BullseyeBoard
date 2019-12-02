@@ -84,23 +84,47 @@ namespace BullseyeBoard
 
         private void teamABustCheck()
         {
-            if (teamAScore <= 1) //WORK IN PROGRESS: Logic that determines when a user busts.
+            if (teamAScore == 1 || teamAScore < 0) //WORK IN PROGRESS: Logic that determines when a user busts.
             {
                 DisplayAlert("Bust!", "You scored an invalid amount of points. You must reach the score of 0 on a double (the red ring). Your score is now set back to the value it was before this turn.", "Ok");
                 teamAScore = Preferences.Get("teamARoundScore", 0);
                 teamASwitch();
                 return;
             }
+            else if (teamAScore == 0 && (Convert.ToString(colorPicker.SelectedItem)) != "Red")
+            {
+                DisplayAlert("Bust!", "You scored an invalid amount of points. You must reach the score of 0 on a double (the red ring). Your score is now set back to the value it was before this turn.", "Ok");
+                teamAScore = Preferences.Get("teamARoundScore", 0);
+                teamASwitch();
+                return;
+            }
+            else if (teamAScore == 0 && (Convert.ToString(colorPicker.SelectedItem)) == "Red")
+            {
+                DisplayAlert("The winner is " + currentTeamLabel.Text, "Congratulations, " + currentTeamLabel.Text + ", you won! Continue to see the final score", "Continue");
+                Navigation.PushAsync(new FinalScorePage());
+            }
         }
 
         private void teamBBustCheck()
         {
-            if (teamBScore <= 1) //WORK IN PROGRESS: Logic that determines when a user busts.
+            if (teamBScore == 1 || teamBScore <0) //WORK IN PROGRESS: Logic that determines when a user busts.
             {
                 DisplayAlert("Bust!", "You scored an invalid amount of points. You must reach the score of 0 on a double (the red ring). Your score is now set back to the value it was before this turn.", "Ok");
                 teamBScore = Preferences.Get("teamBRoundScore", 0);
                 teamBSwitch();
                 return;
+            }
+            else if(teamBScore == 0 && (Convert.ToString(colorPicker.SelectedItem)) != "Red")
+            {
+                DisplayAlert("Bust!", "You scored an invalid amount of points. You must reach the score of 0 on a double (the red ring). Your score is now set back to the value it was before this turn.", "Ok");
+                teamBScore = Preferences.Get("teamBRoundScore", 0);
+                teamBSwitch();
+                return;
+            }
+            else if(teamBScore == 0 && (Convert.ToString(colorPicker.SelectedItem)) == "Red")
+            {
+                DisplayAlert("The winner is " + currentTeamLabel.Text, "Congratulations, " + currentTeamLabel.Text + ", you won! Continue to see the final score", "Continue");
+                Navigation.PushAsync(new FinalScorePage());
             }
         }
 
@@ -118,7 +142,7 @@ namespace BullseyeBoard
                     teamAScore -= throwValue; //Team A score is equal to itself minus whatever the throwValue is
                     Preferences.Set("teamAScore", teamAScore); //store teamA's updated score
                     currentTeamScore.Text = teamAScore.ToString(); //updating the scoreLabel that displays at the top of the screen.
-                    teamABustCheck();
+                    teamABustCheck(); //checks if team A busted after clicking the submit button
                     counter++; //incrementing the counter to determine if it is still this team's turn
 
                     if (counter > 3) //switches teams and displays an alert showing the current team's score.
