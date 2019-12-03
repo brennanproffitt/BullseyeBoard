@@ -60,8 +60,6 @@ namespace BullseyeBoard
             }
         }
 
-
-
         private void teamASwitch() //switches the turn to Team 2 and displays an alert showing Team 1's score.
         {
             DisplayAlert("Team Switch", currentTeamLabel.Text + ", your score is " + teamAScore.ToString(), "Continue");
@@ -104,15 +102,19 @@ namespace BullseyeBoard
             }
         }
 
-        private void SubmitButton_Clicked(object sender, EventArgs e) //handles all the logic when the submit button is clicked
+        private async void SubmitButton_Clicked(object sender, EventArgs e) //handles all the logic when the submit button is clicked
         {
+            await Dartboard.RotateTo(360,1000);
+            Dartboard.Rotation = 0;
             throwValue = computeScore(Convert.ToString(colorPicker.SelectedItem), Convert.ToInt32(numberPicker.SelectedItem)); //throwValue = whatever values were put into the pickers by the user.
             if (currentTeam == "Team 1") //currentTeam is set to "Team 1" by default. This is why whichever team goes first needs to be set to Team 1.
             {
                 if (teamAScore == Preferences.Get("startingGameScore", 0) && (Convert.ToString(colorPicker.SelectedItem)) != "Red") //the logic that requires the user to begin scoring by hitting a double
                 {
-                    DisplayAlert("Invalid", "A double (the red section of the dart board) is required to begin scoring", "Ok");
+                   DisplayAlert("Invalid", "A double (the red section of the dart board) is required to begin scoring", "Ok");
                     throwValue = 0;
+                    counter++;
+                    return;
                 }
 
                     teamAScore -= throwValue; //Team A score is equal to itself minus whatever the throwValue is

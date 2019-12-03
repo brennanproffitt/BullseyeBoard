@@ -22,7 +22,9 @@
                 FontSize="30"
                    x:Name="currentTeamScore">
             </Label>
-            <Image Source="bcolordart.png"
+            <Image
+                x:Name="Dartboard" 
+                Source="bcolordart.png"
                 HeightRequest="415"
                 WidthRequest="415"
                 VerticalOptions="Center"
@@ -80,7 +82,7 @@
                 WidthRequest="175"
                 CornerRadius="40"
                 Margin="0,10,0,10"
-                    Clicked="SubmitButton_Clicked">
+                Clicked="SubmitButton_Clicked">
             </Button>
         </StackLayout>
     </ContentPage.Content>
