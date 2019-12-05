@@ -82,48 +82,55 @@ namespace BullseyeBoard
 
         private void teamABustCheck()
         {
-            if (teamAScore == 1 || teamAScore < 0) //WORK IN PROGRESS: Logic that determines when a user busts.
+            if (teamAScore == 1 || teamAScore < 0) //This is now a bust check and a win check for team B
             {
                 DisplayAlert("Bust!", "You scored an invalid amount of points. You must reach the score of 0 on a double (the red ring). Your score is now set back to the value it was before this turn.", "Ok");
                 teamAScore = Preferences.Get("teamARoundScore", 0);
                 teamASwitch();
                 return;
             }
-            else if (teamAScore == 0 && (Convert.ToString(colorPicker.SelectedItem)) != "Red")
+            else if (teamAScore == 0)
             {
-                DisplayAlert("Bust!", "You scored an invalid amount of points. You must reach the score of 0 on a double (the red ring). Your score is now set back to the value it was before this turn.", "Ok");
-                teamAScore = Preferences.Get("teamARoundScore", 0);
-                teamASwitch();
-                return;
-            }
-            else if (teamAScore == 0 && (Convert.ToString(colorPicker.SelectedItem)) == "Red")
-            {
-                DisplayAlert("The winner is " + currentTeamLabel.Text, "Congratulations, " + currentTeamLabel.Text + ", you won! Continue to see the final score", "Continue");
-                Navigation.PushAsync(new FinalScorePage());
+                if (!(Convert.ToString(colorPicker.SelectedItem) == "Red" || Convert.ToString(colorPicker.SelectedItem) == "Yellow"))
+                {
+                    DisplayAlert("Bust!", "You scored an invalid amount of points. You must reach the score of 0 on a double (the red ring). Your score is now set back to the value it was before this turn.", "Ok");
+                    teamAScore = Preferences.Get("teamARoundScore", 0);
+                    teamASwitch();
+                    return;
+                }
+                else if (Convert.ToString(colorPicker.SelectedItem) == "Red" || (Convert.ToString(colorPicker.SelectedItem)) == "Yellow")
+                {
+                    DisplayAlert("The winner is " + currentTeamLabel.Text, "Congratulations, " + currentTeamLabel.Text + ", you won! Continue to see the final score", "Continue");
+                    Navigation.PushAsync(new FinalScorePage());
+                }
             }
         }
 
         private void teamBBustCheck()
         {
-            if (teamBScore == 1 || teamBScore <0) //WORK IN PROGRESS: Logic that determines when a user busts.
+            if (teamBScore == 1 || teamBScore <0) //This is now a bust check and a win check for team B
             {
                 DisplayAlert("Bust!", "You scored an invalid amount of points. You must reach the score of 0 on a double (the red ring). Your score is now set back to the value it was before this turn.", "Ok");
                 teamBScore = Preferences.Get("teamBRoundScore", 0);
                 teamBSwitch();
                 return;
             }
-            else if(teamBScore == 0 && (Convert.ToString(colorPicker.SelectedItem)) != "Red")
+            else if(teamBScore == 0)
             {
-                DisplayAlert("Bust!", "You scored an invalid amount of points. You must reach the score of 0 on a double (the red ring). Your score is now set back to the value it was before this turn.", "Ok");
-                teamBScore = Preferences.Get("teamBRoundScore", 0);
-                teamBSwitch();
-                return;
+                if (!(Convert.ToString(colorPicker.SelectedItem) == "Red" || Convert.ToString(colorPicker.SelectedItem) == "Yellow"))
+                {
+                    DisplayAlert("Bust!", "You scored an invalid amount of points. You must reach the score of 0 on a double (the red ring). Your score is now set back to the value it was before this turn.", "Ok");
+                    teamBScore = Preferences.Get("teamBRoundScore", 0);
+                    teamBSwitch();
+                    return;
+                }
+                else if (Convert.ToString(colorPicker.SelectedItem) == "Red" || (Convert.ToString(colorPicker.SelectedItem)) == "Yellow")
+                {
+                    DisplayAlert("The winner is " + currentTeamLabel.Text, "Congratulations, " + currentTeamLabel.Text + ", you won! Continue to see the final score", "Continue");
+                    Navigation.PushAsync(new FinalScorePage());
+                }
             }
-            else if(teamBScore == 0 && (Convert.ToString(colorPicker.SelectedItem)) == "Red")
-            {
-                DisplayAlert("The winner is " + currentTeamLabel.Text, "Congratulations, " + currentTeamLabel.Text + ", you won! Continue to see the final score", "Continue");
-                Navigation.PushAsync(new FinalScorePage());
-            }
+            
         }
 
         private async void SubmitButton_Clicked(object sender, EventArgs e) //handles all the logic when the submit button is clicked
@@ -133,13 +140,15 @@ namespace BullseyeBoard
             throwValue = computeScore(Convert.ToString(colorPicker.SelectedItem), Convert.ToInt32(numberPicker.SelectedItem)); //throwValue = whatever values were put into the pickers by the user.
             if (currentTeam == "Team 1") //currentTeam is set to "Team 1" by default. This is why whichever team goes first needs to be set to Team 1.
             {
-                if (teamAScore == Preferences.Get("startingGameScore", 0) && (Convert.ToString(colorPicker.SelectedItem)) != "Red") //the logic that requires the user to begin scoring by hitting a double
+                if(!(Convert.ToString(colorPicker.SelectedItem) == "Red" || Convert.ToString(colorPicker.SelectedItem) == "Yellow"))
                 {
-                   DisplayAlert("Invalid", "A double (the red section of the dart board) is required to begin scoring", "Ok");
-                    throwValue = 0;
-                    counter++;
-                    return;
+                    if (teamAScore == Preferences.Get("startingGameScore", 0)) //the logic that requires the user to begin scoring by hitting a double
+                    {
+                        DisplayAlert("Invalid", "A double (the red section of the dart board) is required to begin scoring", "Ok");
+                        throwValue = 0;
+                    }
                 }
+               
 
                     teamAScore -= throwValue; //Team A score is equal to itself minus whatever the throwValue is
                     Preferences.Set("teamAScore", teamAScore); //store teamA's updated score
@@ -154,12 +163,15 @@ namespace BullseyeBoard
             }
             else //everything in this else statement is practically the same as the above, just for the opposite team.
             {
-
-                if (teamBScore == Preferences.Get("startingGameScore", 0) && (Convert.ToString(colorPicker.SelectedItem)) != "Red")
+                if (!(Convert.ToString(colorPicker.SelectedItem) == "Red" || Convert.ToString(colorPicker.SelectedItem) == "Yellow"))
                 {
-                    DisplayAlert("Invalid", "A double is required to begin scoring", "Ok");
-                    throwValue = 0;
+                    if (teamBScore == Preferences.Get("startingGameScore", 0))
+                    {
+                        DisplayAlert("Invalid", "A double (the red section of the dart board) is required to begin scoring", "Ok");
+                        throwValue = 0;
+                    }
                 }
+                
 
                 teamBScore -= throwValue;
                 Preferences.Set("teamBScore", teamBScore);
