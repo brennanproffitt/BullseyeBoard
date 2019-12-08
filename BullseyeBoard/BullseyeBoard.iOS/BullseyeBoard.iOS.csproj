@@ -136,4 +136,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\bcolordart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\WoodPaneling.png" />
+  </ItemGroup>
 </Project>
