@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="BullseyeBoard.GameTypePage"
-             BackgroundColor="Black">
+             BackgroundImageSource="WoodPaneling.png"
+             NavigationPage.HasNavigationBar="False">
     
     <ContentPage.Content>
         <StackLayout>
@@ -14,7 +15,7 @@
            VerticalOptions="StartAndExpand"
                FontAttributes="Bold"
                FontSize="55"
-               TextColor="Red"/>
+               TextColor="WhiteSmoke"/>
 
             <Button Text="301"
                 VerticalOptions="CenterAndExpand"

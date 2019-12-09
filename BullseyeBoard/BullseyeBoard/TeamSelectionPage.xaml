@@ -4,8 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             BackgroundColor="Black"
-             x:Class="BullseyeBoard.TeamSelectionPage">
+             BackgroundImageSource="WoodPaneling.png"
+             x:Class="BullseyeBoard.TeamSelectionPage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
 
@@ -13,7 +14,7 @@
 
                 <Label 
                 Text="Team Names"
-                TextColor="Red"
+                TextColor="WhiteSmoke"
                 FontSize="50"
                 FontAttributes="Bold"
                 VerticalOptions="StartAndExpand" 

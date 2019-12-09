@@ -5,22 +5,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="BullseyeBoard.GamePage"
-             BackgroundColor="Black">
+             BackgroundImageSource="WoodPaneling.png"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout  Margin="20" Spacing="5">
             <Label Text=""
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" 
-                TextColor="Red"
+                TextColor="WhiteSmoke"
                 FontSize="30"
-                x:Name="currentTeamLabel">
+                x:Name="currentTeamLabel" FontAttributes="Bold">
             </Label>
             <Label Text="Team 1 Score"
                 VerticalOptions="Start" 
                 HorizontalOptions="Center" 
-                TextColor="Red"
+                TextColor="WhiteSmoke"
                 FontSize="30"
-                   x:Name="currentTeamScore">
+                FontAttributes="Bold"
+                x:Name="currentTeamScore">
             </Label>
             <Image
                 x:Name="Dartboard" 
@@ -49,8 +51,6 @@
                 TextColor="White"
                 FontSize="20">
                 <Picker.Items>
-                    <x:String>0</x:String>
-                    <!-- 0 was added because it is possible that the user doesn't hit anything on the board.-->
                     <x:String>1</x:String>
                     <x:String>2</x:String>
                     <x:String>3</x:String>
@@ -97,6 +97,7 @@
                         HorizontalOptions="EndAndExpand"
                         CornerRadius="40"
                         Margin="0,10,0,10"
+                        Clicked="missButton_Clicked"
                         >
                 </Button>
             </StackLayout>

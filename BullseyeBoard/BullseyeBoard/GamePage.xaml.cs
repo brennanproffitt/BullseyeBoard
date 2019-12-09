@@ -187,5 +187,18 @@ namespace BullseyeBoard
 
 
         }
+
+        private void missButton_Clicked(object sender, EventArgs e)
+        {
+            counter++;
+            if(counter > 3 && currentTeam == "Team 1")
+            {
+                teamASwitch();
+            }
+            else if (counter > 3 && currentTeam == "Team 2")
+            {
+                teamBSwitch();
+            }
+        }
     }
 }

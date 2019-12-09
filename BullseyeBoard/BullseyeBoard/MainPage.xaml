@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              BackgroundImageSource="WoodPaneling.png"
-             x:Class="BullseyeBoard.MainPage">
+             x:Class="BullseyeBoard.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
 
     <StackLayout>
         <Label Text="BullseyeBoard" 
@@ -13,7 +15,7 @@
            VerticalOptions="StartAndExpand"
                FontAttributes="Bold"
                FontSize="55"
-               TextColor="Red"/>
+               TextColor="WhiteSmoke"/>
 
         <Image Source="bcolordart.png"
                VerticalOptions="Center"
