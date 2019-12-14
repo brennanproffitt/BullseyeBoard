@@ -5,22 +5,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="BullseyeBoard.GameTypePage"
-             BackgroundImageSource="WoodPaneling.png"
+             BackgroundImageSource="woodbackground.jpg"
              NavigationPage.HasNavigationBar="False">
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="0,30,0,0">
             <Label Text="BullseyeBoard" 
            HorizontalOptions="Center"
            VerticalOptions="StartAndExpand"
                FontAttributes="Bold"
-               FontSize="55"
+               FontSize="50"
                TextColor="WhiteSmoke"/>
 
             <Button Text="301"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
-                BackgroundColor="ForestGreen"
+                BackgroundColor="DimGray"
                 TextColor="White"
                 FontSize="Header"
                 HeightRequest="100"

@@ -129,14 +129,12 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\BullseyeBoard\BullseyeBoard.csproj">
-      <Project>{B2EFBAB7-6A8D-4F26-B06D-BFF7C5B723F2}</Project>
+      <Project>{E63ACFB5-6567-4376-9AC1-1ADB5BF3DA85}</Project>
       <Name>BullseyeBoard</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\bcolordart.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\WoodPaneling.png" />
+    <BundleResource Include="Resources\woodbackground.jpg" />
   </ItemGroup>
 </Project>
