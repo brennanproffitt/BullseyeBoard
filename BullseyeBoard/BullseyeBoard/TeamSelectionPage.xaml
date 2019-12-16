@@ -60,12 +60,12 @@
                 Text="Submit"
                 Margin="20"
                 HorizontalOptions="Center"
-                CornerRadius="50"
+                CornerRadius="2"
                 TextColor="White"
                 BackgroundColor="ForestGreen"
                 HeightRequest="100"
                 WidthRequest="250"
-                FontSize="Header"
+                FontSize="Subtitle"
                 Clicked="SubmitButton_Clicked"/>
 
 

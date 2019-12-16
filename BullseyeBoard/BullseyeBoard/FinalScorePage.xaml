@@ -86,7 +86,7 @@
                 Text="New Game"
                 Margin="20"
                 HorizontalOptions="Center"
-                CornerRadius="50"
+                CornerRadius="2"
                 TextColor="White"
                 BackgroundColor="ForestGreen"
                 WidthRequest="250"

@@ -101,6 +101,10 @@ namespace BullseyeBoard
                 else if (Convert.ToString(colorPicker.SelectedItem) == "Red" || (Convert.ToString(colorPicker.SelectedItem)) == "Yellow")
                 {
                     DisplayAlert("The winner is " + currentTeamLabel.Text, "Congratulations, " + currentTeamLabel.Text + ", you won! Continue to see the final score", "Continue");
+                    Preferences.Get(Convert.ToString(teamAScore), 0);
+                    Preferences.Set("teamAScore", teamAScore);
+                    Preferences.Get(Convert.ToString(teamBScore), 0);
+                    Preferences.Set("teamBScore", teamBScore);
                     Navigation.PushAsync(new FinalScorePage());
                 }
             }
@@ -127,6 +131,10 @@ namespace BullseyeBoard
                 else if (Convert.ToString(colorPicker.SelectedItem) == "Red" || (Convert.ToString(colorPicker.SelectedItem)) == "Yellow")
                 {
                     DisplayAlert("The winner is " + currentTeamLabel.Text, "Congratulations, " + currentTeamLabel.Text + ", you won! Continue to see the final score", "Continue");
+                    Preferences.Get(Convert.ToString(teamAScore), 0);
+                    Preferences.Set("teamAScore", teamAScore);
+                    Preferences.Get(Convert.ToString(teamBScore), 0);
+                    Preferences.Set("teamBScore", teamBScore);
                     Navigation.PushAsync(new FinalScorePage());
                 }
             }

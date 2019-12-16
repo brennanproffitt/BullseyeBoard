@@ -17,8 +17,8 @@ namespace BullseyeBoard
             InitializeComponent();
             Team1Name.Text = Preferences.Get("TeamOneName", "Team1");
             Team2Name.Text = Preferences.Get("TeamTwoName", "Team2");
-            Team1FinalScore.Text = Convert.ToString(Preferences.Get("TeamAScore", 0));
-            Team2FinalScore.Text = Convert.ToString(Preferences.Get("TeamBScore", 0));
+            Team1FinalScore.Text = Convert.ToString(Preferences.Get("teamAScore", "Not Passed"));
+            Team2FinalScore.Text = Convert.ToString(Preferences.Get("teamBScore", "Not Passed"));
         }
 
         private void NewGameButton_Clicked(object sender, EventArgs e)
